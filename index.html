@@ -17,7 +17,7 @@
   <section id="abstract">
     <h2>Abstract</h2>
     <p>Index Terms—Transfer Learning, Zero-Shot Learning, Mirror Detection</p>
-    <p>Grounding-Dino stands at the forefront of zero-shot object detection, offering a groundbreaking approach. Its grounding module is instrumental in connecting textual phrases with specific image regions, empowering the model to identify objects in open-set scenarios. Despite its zero-shot learning prowess, limitations emerge in complex scenarios, particularly in detecting mirrors. To enhance this capability, we employ fine-tuning, leveraging the MMDetection library.
+    <p>Mirror segmentation is a challenging task due to its reflection property and existing solutions requires large amounts of data and manual annotations. In this paper, we propose a method of finetuning Grounding-DINO, a zero-shot object detector, on a small subset of the Mirror Segmentation Dataset (MSD) to enhance its performance on mirror detection. We then fuse Grounding-DINO with Segment Anything Model (SAM), a semantic segmentation model, to create Grounded-SAM, a model that can segment mirrors based on textual inputs. We evaluate our method on the MSD dataset and show that it outperforms the unfinetuned Grounding-SAM and is competitive with existing mirror segmentation models. We conclude that finetuning can help improve the performance of zero-shot models on specific tasks, and that Grounded-SAM can be applied to various downstream tasks that involve mirror segmentation.
     </p>
     <!-- Add more content as needed -->
   </section>
