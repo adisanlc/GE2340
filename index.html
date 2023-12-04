@@ -17,20 +17,30 @@
   <section id="abstract">
     <h2>Abstract</h2>
     <p>Index Terms—Transfer Learning, Zero-Shot Learning, Mirror Detection</p>
-    <p>In the paced world of machine learning (ML) there are significant challenges when it comes to obtaining large amounts of data and computing resources...</p>
+    <p>Grounding-Dino stands at the forefront of zero-shot object detection, offering a groundbreaking approach. Its grounding module is instrumental in connecting textual phrases with specific image regions, empowering the model to identify objects in open-set scenarios. Despite its zero-shot learning prowess, limitations emerge in complex scenarios, particularly in detecting mirrors. To enhance this capability, we employ fine-tuning, leveraging the MMDetection library.
+    </p>
     <!-- Add more content as needed -->
   </section>
 
   <section id="introduction">
-    <h2>I. INTRODUCTION</h2>
-    <p>In the paced world of machine learning (ML) there are significant challenges when it comes to obtaining large amounts of data and computing resources...</p>
+    <h2>Dataset Preparation:</h2>
+    <p>Utilizing Grounding DINO for mirror detection, we select a subset of the Mirror Segmentation Dataset (MSD). Despite its focus on segmentation, Grounding DINO's pre-trained knowledge compensates for the limited size of our training sample. We convert segmentation masks into bounding box annotations, bridging the gap for object detection.</p>
+    <p>All datasets can be found on GitHub: <a href="https://github.com/adisanlc/GE2340.git" style="color: blue;">https://github.com/adisanlc/GE2340.git</a></p>
+
+    <!-- Add more content as needed -->
+  </section>
+
+  <section id="introduction">
+    <h2>Finetuning Details:</h2>
+    <p>Utilizing MMDe-tction’s framework, we make specific alterations to fine-tune Grounding-Dino. Pre-trained weights from diverse datasets enrich the model's knowledge, enhancing feature extraction for mirror detection. Despite the original architecture's retention, adjustments to optimizer settings, learning rate, and scheduler are crucial. Finetuning over 20 epochs yields superior results, with the final weights selected based on mean Average Precision (mAP).</p>
+    <p>Grounded-SAM, a fusion of Grounding-DINO and Segment Anything Model (SAM), excels in zero-shot segmentation. SAM's segmentation skills, combined with Grounding-DINO's bounding box generation, form a powerful tool for mirror segmentation. ViT-H SAM, with official pre-trained weights, facilitates the inference process.</p>
     <!-- Add more content as needed -->
   </section>
 
   <!-- Add more sections for RELATED WORK, DESCRIPTION, EVALUATION, etc. -->
 
   <section id="training-data">
-    <h2>Training Data</h2>
+    <h2>MSD_COCO Training Data</h2>
     <div class="image-gallery">
         <!-- Display training images from the 'train' folder -->
         <h3>Training Images</h3>
@@ -38,6 +48,8 @@
             <!-- Add image tags dynamically based on your dataset structure -->
             <img src="MSD_COCO/train/image/7_512x640.jpg" alt="Training Image 1">
             <img src="MSD_COCO/train/image/9_640x512.jpg" alt="Training Image 2">
+            <img src="MSD_COCO/train/image/10_512x640.jpg" alt="Training Image 3">
+            <img src="MSD_COCO/train/image/23_512x640.jpg" alt="Training Image 4">
             <!-- Add more images as needed -->
         </div>
 
@@ -47,6 +59,8 @@
             <!-- Add mask image tags dynamically based on your dataset structure -->
             <img src="MSD_COCO/train/mask/7_512x640.png" alt="Training Mask 1">
             <img src="MSD_COCO/train/mask/9_640x512.png" alt="Training Mask 2">
+            <img src="MSD_COCO/train/mask/10_512x640.png" alt="Training Mask 3">
+            <img src="MSD_COCO/train/mask/23_512x640.png" alt="Training Mask 4">
             <!-- Add more masks as needed -->
         </div>
     </div>
@@ -60,7 +74,9 @@
         <div class="image-container">
             <!-- Add image tags dynamically based on your dataset structure -->
             <img src="MSD_COCO/test/image/22_512x640.jpg" alt="Testing Image 1">
-            <img src="MSD_COCO/test/image/37_512x640.jpg" alt="Testing Image 2">
+            <img src="MSD_COCO/test/image/5129_512x640.jpg" alt="Testing Image 2">
+            <img src="MSD_COCO/test/image/66_512x640.jpg" alt="Testing Image 1">
+            <img src="MSD_COCO/test/image/318_512x640.jpg" alt="Testing Image 2">
             <!-- Add more images as needed -->
         </div>
 
@@ -69,64 +85,85 @@
         <div class="image-container">
             <!-- Add mask image tags dynamically based on your dataset structure -->
             <img src="MSD_COCO/test/mask/22_512x640.png" alt="Testing Mask 1">
-            <img src="MSD_COCO/test/mask/37_512x640.png" alt="Testing Mask 2">
+            <img src="MSD_COCO/test/mask/5129_512x640.png" alt="Testing Mask 2">
+            <img src="MSD_COCO/test/mask/66_512x640.png" alt="Testing Mask 1">
+            <img src="MSD_COCO/test/mask/318_512x640.png" alt="Testing Mask 2">
             <!-- Add more masks as needed -->
         </div>
     </div>
   </section>
 
-  <section id="grounding-dino-results">
-    <h2>Grounding Dino Results</h2>
+  
 
-    <div class="image-gallery" id="finetuned-gallery">
-        <h3>Finetuned Images</h3>
-        <div class="image-container">
-            <!-- Add image tags for finetuned images dynamically based on your dataset structure -->
-            <img src="Grounding_Dino_Results/finetuned/22_512x640.jpg" alt="Finetuned Image 1">
-            <img src="Grounding_Dino_Results/finetuned/37_512x640.jpg" alt="Finetuned Image 2">
-            <!-- Add more finetuned images as needed -->
-        </div>
-    </div>
-
-    <div class="image-gallery" id="unfinetuned-gallery">
-        <h3>Unfinetuned Images</h3>
-        <div class="image-container">
-            <!-- Add image tags for unfinetuned images dynamically based on your dataset structure -->
-            <img src="Grounding_Dino_Results/unfinetuned/22_512x640.jpg" alt="Unfinetuned Image 1">
-            <img src="Grounding_Dino_Results/unfinetuned/37_512x640.jpg" alt="Unfinetuned Image 2">
-            <!-- Add more unfinetuned images as needed -->
-        </div>
-    </div>
 </section>
 
 <section id="grounding-dino-results">
+  <h2>Grounding Dino Results</h2>
+  <p>The finetuned model significantly outperforms the unfinetuned across all metrics, demonstrating remarkable improvement in object detection accuracy, especially at higher IoU thresholds. The model's effectiveness in detecting mirrors and generating accurate bounding boxes is evident.  </p>
+
+  <div class="image-gallery" id="unfinetuned-gallery">
+      <h3>Unfinetuned Images</h3>
+      <div class="image-container">
+          <!-- Add image tags for unfinetuned images dynamically based on your dataset structure -->
+          <img src="Grounding_Dino_Results/unfinetuned/22_512x640.jpg" alt="Unfinetuned Image 1">
+          <img src="Grounding_Dino_Results/unfinetuned/5129_512x640.jpg" alt="Unfinetuned Image 2">
+          <img src="Grounding_Dino_Results/unfinetuned/66_512x640.jpg" alt="Finetuned Image 3">
+          <img src="Grounding_Dino_Results/unfinetuned/318_512x640.jpg" alt="Finetuned Image 4">
+          <!-- Add more unfinetuned images as needed -->
+      </div>
+  </div>
+
+  <div class="image-gallery" id="finetuned-gallery">
+      <h3>Finetuned Images</h3>
+      <div class="image-container">
+          <!-- Add image tags for finetuned images dynamically based on your dataset structure -->
+          <img src="Grounding_Dino_Results/finetuned/22_512x640.jpg" alt="Finetuned Image 1">
+          <img src="Grounding_Dino_Results/finetuned/5129_512x640.jpg" alt="Finetuned Image 2">
+          <img src="Grounding_Dino_Results/finetuned/66_512x640.jpg" alt="Finetuned Image 3">
+          <img src="Grounding_Dino_Results/finetuned/318_512x640.jpg" alt="Finetuned Image 4">
+          <!-- Add more finetuned images as needed -->
+      </div>
+  </div>
+
+<section id="grounding-sam-results">
   <h2>Grounding SAM Results</h2>
+
+  <p>A comprehensive quantitative comparison with existing models showcases the significant improvement of the finetuned Grounded-SAM. Despite a substantially smaller training dataset, the finetuned model achieves lower MAE and higher IoU and Fβ scores, highlighting its efficiency in challenging mirror detection.</p>
+  <div class="image-gallery" id="unfinetuned-gallery">
+      <h3>Unfinetuned Images</h3>
+      <div class="image-container">
+          <!-- Add image tags for unfinetuned images dynamically based on your dataset structure -->
+          <img src="Grounded_SAM_results/unfinetuned_masks/22_512x640.png" alt="Unfinetuned Image 1">
+          <img src="Grounded_SAM_results/unfinetuned_masks/5129_512x640.png" alt="Unfinetuned Image 2">
+          <img src="Grounded_SAM_results/unfinetuned_masks/66_512x640.png" alt="Unfinetuned Image 3">
+          <img src="Grounded_SAM_results/unfinetuned_masks/318_512x640.png" alt="Unfinetuned Image 4">
+          <!-- Add more unfinetuned images as needed -->
+      </div>
+  </div>
 
   <div class="image-gallery" id="finetuned-gallery">
       <h3>Finetuned Images</h3>
       <div class="image-container">
           <!-- Add image tags for finetuned images dynamically based on your dataset structure -->
           <img src="Grounded_SAM_results/finetuned_masks/22_512x640.png" alt="Finetuned Image 1">
-          <img src="Grounded_SAM_results/finetuned_masks/37_512x640.png" alt="Finetuned Image 2">
+          <img src="Grounded_SAM_results/finetuned_masks/5129_512x640.png" alt="Finetuned Image 2">
+          <img src="Grounded_SAM_results/finetuned_masks/66_512x640.png" alt="Finetuned Image 3">
+          <img src="Grounded_SAM_results/finetuned_masks/318_512x640.png" alt="Finetuned Image 4">
           <!-- Add more finetuned images as needed -->
       </div>
   </div>
 
-  <div class="image-gallery" id="unfinetuned-gallery">
-      <h3>Unfinetuned Images</h3>
-      <div class="image-container">
-          <!-- Add image tags for unfinetuned images dynamically based on your dataset structure -->
-          <img src="Grounded_SAM_results/unfinetuned_masks/22_512x640.png" alt="Unfinetuned Image 1">
-          <img src="Grounded_SAM_results/unfinetuned_masks/37_512x640.png" alt="Unfinetuned Image 2">
-          <!-- Add more unfinetuned images as needed -->
-      </div>
-  </div>
+</section>
+
+<section id="introduction">
+  <h2>Results</h2>
+  <p>Comparisons between unfinetuned and finetuned models, alongside state-of-the-art counterparts, reveal the superior performance of the finetuned Grounded-SAM. Notably, the finetuned model reduces segmentation errors and occasionally outperforms established systems, emphasizing its efficacy in mirror detection.
+  </p>
+    <p>In conclusion, our work demonstrates the effectiveness of fine-tuning Grounding-Dino and Grounded-SAM for mirror detection, even with limited data. The results open new possibilities for applying these models in various computer vision tasks, showcasing their versatility and practical utility.</p>
+  <!-- Add more content as needed -->
 </section>
 
 
-  <footer>
-    <p>&copy; 2023</p>
-  </footer>
 
 </body>
 </html>

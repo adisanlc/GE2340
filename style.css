@@ -62,11 +62,37 @@ footer {
 }
 
 .image-container img {
-    max-width: 80%;
+    max-width: 40%;
     height: auto;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
+#grounding-sam-results .image-container img {
+    max-width: 20%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#training-data .image-container img {
+    max-width: 20%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+
+#testing-data .image-container img {
+    max-width: 20%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
 
 /* Add more styles as needed */
