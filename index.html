@@ -29,6 +29,101 @@
 
   <!-- Add more sections for RELATED WORK, DESCRIPTION, EVALUATION, etc. -->
 
+  <section id="training-data">
+    <h2>Training Data</h2>
+    <div class="image-gallery">
+        <!-- Display training images from the 'train' folder -->
+        <h3>Training Images</h3>
+        <div class="image-container">
+            <!-- Add image tags dynamically based on your dataset structure -->
+            <img src="MSD_COCO/train/image/7_512x640.jpg" alt="Training Image 1">
+            <img src="MSD_COCO/train/image/9_640x512.jpg" alt="Training Image 2">
+            <!-- Add more images as needed -->
+        </div>
+
+        <!-- Display corresponding masks from the 'train' folder -->
+        <h3>Training Masks</h3>
+        <div class="image-container">
+            <!-- Add mask image tags dynamically based on your dataset structure -->
+            <img src="MSD_COCO/train/mask/7_512x640.png" alt="Training Mask 1">
+            <img src="MSD_COCO/train/mask/9_640x512.png" alt="Training Mask 2">
+            <!-- Add more masks as needed -->
+        </div>
+    </div>
+  </section>
+
+  <section id="testing-data">
+    <h2>Testing Data</h2>
+    <div class="image-gallery">
+        <!-- Display testing images from the 'test' folder -->
+        <h3>Testing Images</h3>
+        <div class="image-container">
+            <!-- Add image tags dynamically based on your dataset structure -->
+            <img src="MSD_COCO/test/image/22_512x640.jpg" alt="Testing Image 1">
+            <img src="MSD_COCO/test/image/37_512x640.jpg" alt="Testing Image 2">
+            <!-- Add more images as needed -->
+        </div>
+
+        <!-- Display corresponding masks from the 'test' folder -->
+        <h3>Testing Masks</h3>
+        <div class="image-container">
+            <!-- Add mask image tags dynamically based on your dataset structure -->
+            <img src="MSD_COCO/test/mask/22_512x640.png" alt="Testing Mask 1">
+            <img src="MSD_COCO/test/mask/37_512x640.png" alt="Testing Mask 2">
+            <!-- Add more masks as needed -->
+        </div>
+    </div>
+  </section>
+
+  <section id="grounding-dino-results">
+    <h2>Grounding Dino Results</h2>
+
+    <div class="image-gallery" id="finetuned-gallery">
+        <h3>Finetuned Images</h3>
+        <div class="image-container">
+            <!-- Add image tags for finetuned images dynamically based on your dataset structure -->
+            <img src="Grounding_Dino_Results/finetuned/22_512x640.jpg" alt="Finetuned Image 1">
+            <img src="Grounding_Dino_Results/finetuned/37_512x640.jpg" alt="Finetuned Image 2">
+            <!-- Add more finetuned images as needed -->
+        </div>
+    </div>
+
+    <div class="image-gallery" id="unfinetuned-gallery">
+        <h3>Unfinetuned Images</h3>
+        <div class="image-container">
+            <!-- Add image tags for unfinetuned images dynamically based on your dataset structure -->
+            <img src="Grounding_Dino_Results/unfinetuned/22_512x640.jpg" alt="Unfinetuned Image 1">
+            <img src="Grounding_Dino_Results/unfinetuned/37_512x640.jpg" alt="Unfinetuned Image 2">
+            <!-- Add more unfinetuned images as needed -->
+        </div>
+    </div>
+</section>
+
+<section id="grounding-dino-results">
+  <h2>Grounding SAM Results</h2>
+
+  <div class="image-gallery" id="finetuned-gallery">
+      <h3>Finetuned Images</h3>
+      <div class="image-container">
+          <!-- Add image tags for finetuned images dynamically based on your dataset structure -->
+          <img src="Grounded_SAM_results/finetuned_masks/22_512x640.png" alt="Finetuned Image 1">
+          <img src="Grounded_SAM_results/finetuned_masks/37_512x640.png" alt="Finetuned Image 2">
+          <!-- Add more finetuned images as needed -->
+      </div>
+  </div>
+
+  <div class="image-gallery" id="unfinetuned-gallery">
+      <h3>Unfinetuned Images</h3>
+      <div class="image-container">
+          <!-- Add image tags for unfinetuned images dynamically based on your dataset structure -->
+          <img src="Grounded_SAM_results/unfinetuned_masks/22_512x640.png" alt="Unfinetuned Image 1">
+          <img src="Grounded_SAM_results/unfinetuned_masks/37_512x640.png" alt="Unfinetuned Image 2">
+          <!-- Add more unfinetuned images as needed -->
+      </div>
+  </div>
+</section>
+
+
   <footer>
     <p>&copy; 2023</p>
   </footer>
